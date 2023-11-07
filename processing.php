@@ -18,9 +18,8 @@ function calcTimeLived($date)
 		$dateToCalc = time() - strtotime($date);
 	}
 	
-	// O calculo é feito dividindo o timestamp retornardo pela função strtotime 
-	// pela quantidade de segundos que tem um ano, mês, semana, dia, etc...
-	$year = $dateToCalc / 31536000;
+	$year = $checkDate->diff(new DateTime());
+	$year = $year->format('%Y');
 	$mounth = $dateToCalc / 2629746;
 	$week = $dateToCalc / 604800;
 	$day = $dateToCalc / 86400;
@@ -31,7 +30,7 @@ function calcTimeLived($date)
 	$date = $checkDate->format('d/m/Y');
 	
 	$result = "<span>Quem nasceu em $date, já viveu pelo menos:</span> <br>" .
-				"<center>" . number_format((int)$year, 0, '.', '.') . " anos<br>" .
+				"<center>" . number_format((int)$year, 0, '.', '.')  . " anos<br>" .
 				number_format((int)$mounth, 0, '.', '.') . " meses<br>" .
 				number_format((int)$week, 0, '.', '.') . " semanas<br>" .
 				number_format((int)$day, 0, '.', '.') . " dias<br>" .
