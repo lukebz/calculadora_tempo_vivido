@@ -9,9 +9,7 @@ function calcTimeLived($date)
 
 	if($checkDate->format("Y") < 1970)
 	{
-		$negativeStrDate = strtotime($date);
-		$positiveStrDate = abs($negativeStrDate);
-		$dateToCalc = time() + $positiveStrDate;
+		$dateToCalc = time() + abs(strtotime($date));
 	}
 	else
 	{
