@@ -70,12 +70,12 @@ body{
 	padding: 8px;
 	background-color: #fff;
 	color: #000;
-	transition: 1.3s, background-color 1s;
+	transition: background-color 1s;
 }
 
 .container_form input:focus{
 	background-color: #ffc;
-	transition: 1.3s, background-color 1s;
+	transition: background-color 1s;
 	
 }
 
